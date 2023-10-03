@@ -5,7 +5,7 @@
 
 ### Steps That I follow to develope this task.
 
-- There is a one python library which can help us to remove background of an image files
+- There is a one python library or we can say a project that can help us to remove background of an image files
 - https://github.com/danielgatis/rembg
 
 - It is use
@@ -31,5 +31,15 @@
 5. upload the image (.jpg, .jpeg , .png)
 
 6. 
+
+
+
+
+## For the demo pupose i create a Streamlit App
+
+### How to run the app
+
+- go to the path where streamlit_app_demo.py is located and run the below command
+- streamlit run streamlit_app_demo.py
 
 
