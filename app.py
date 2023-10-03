@@ -21,12 +21,12 @@ async def upload_image(img_file:UploadFile =File(...)):
     if '.jpg' in img_file.filename or '.jpeg' in img_file.filename or '.png' in img_file.filename:
 
         #give input and output file names
-        file_save_path="./images/"+today_date+"/"+current_time+"_"+img_file.filename
+        file_save_path="./uploaded_images/"+today_date+"/"+current_time+"_"+img_file.filename
         file_output_path="./removed_bg/"+today_date+"/"+current_time+"_removed_bg_"+img_file.filename
         
         #check images directory exists or not, if not then create.
-        if os.path.exists("./images/"+today_date+"/") == False:
-            os.makedirs("./images/"+today_date+"/")
+        if os.path.exists("./uploaded_images/"+today_date+"/") == False:
+            os.makedirs("./uploaded_images/"+today_date+"/")
 
         #check removed_bg directory exists or not, if not then create.
 

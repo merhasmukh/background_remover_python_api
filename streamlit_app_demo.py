@@ -28,7 +28,7 @@ def main():
             if img_file.type.startswith('image/'):
                 # Give input and output file names
                  #give input and output file names
-                file_save_path="./images/"+today_date+"/"+current_time+"_"+img_file.name
+                file_save_path="./uploaded_images/"+today_date+"/"+current_time+"_"+img_file.name
                 file_output_path="./removed_bg/"+today_date+"/"+current_time+"_removed_bg_"+img_file.name
                 filename=current_time+"_removed_bg_"+img_file.name
                 
@@ -37,8 +37,8 @@ def main():
                     filename=filename.replace(fextension,".png")
                 print(filename)
                 # Check images directory exists or not, if not then create.
-                if not os.path.exists(f"./images/{today_date}/"):
-                    os.makedirs(f"./images/{today_date}/")
+                if not os.path.exists(f"./uploaded_images/{today_date}/"):
+                    os.makedirs(f"./uploaded_images/{today_date}/")
 
                 # Check removed_bg directory exists or not, if not then create.
                 if not os.path.exists(f"./removed_bg/{today_date}/"):
