@@ -41,8 +41,10 @@ async def upload_image(img_file:UploadFile =File(...)):
         if os.path.exists(file_save_path):
             result=with_rembg.remove_background(file_save_path,file_output_path)
             
-            if result['message'] == "success":
+            if result['status'] == "success":
                 return {"image_path":file_save_path,"message": f"Image saved at {result['file_out_path']} successfully"}
+            else:
+                return {"error":result['error']}
         else:
             return {"error":"Image Not saved !!!"}
     else:

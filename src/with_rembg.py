@@ -17,8 +17,8 @@ def remove_background(image_path,output_path):
         # Save the output image
         output.save(output_path,format="PNG")
 
-        return {"message":"success","file_out_path":output_path}
+        return {"status":"success","file_out_path":output_path}
     except Exception as e:
-        return {"error":str(e),"message":"getting error in removing backgroung using rembg"}
+        return {"error":str(e),"message":"getting error in removing backgroung using rembg","status":"fail"}
 
 

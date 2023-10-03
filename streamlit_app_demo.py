@@ -52,7 +52,7 @@ def main():
                 if os.path.exists(file_save_path):
                     result = with_rembg.remove_background(file_save_path, file_output_path)
                     
-                    if result['message'] == "success":
+                    if result['status'] == "success":
 
                         st.image(result['file_out_path'], use_column_width=True)
                         st.success("Image saved successfully.")
