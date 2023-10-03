@@ -30,7 +30,7 @@
 
 5. upload the image (.jpg, .jpeg , .png)
 
-6. 
+6. we get the output image as .png 
 
 
 

@@ -21,17 +21,17 @@ async def upload_image(img_file:UploadFile =File(...)):
     if '.jpg' in img_file.filename or '.jpeg' in img_file.filename or '.png' in img_file.filename:
 
         #give input and output file names
-        file_save_path="./uploaded_images/"+today_date+"/"+current_time+"_"+img_file.filename
-        file_output_path="./removed_bg/"+today_date+"/"+current_time+"_removed_bg_"+img_file.filename
+        file_save_path="./images/uploaded_images/"+today_date+"/"+current_time+"_"+img_file.filename
+        file_output_path="./images/removed_bg/"+today_date+"/"+current_time+"_removed_bg_"+img_file.filename
         
         #check images directory exists or not, if not then create.
-        if os.path.exists("./uploaded_images/"+today_date+"/") == False:
-            os.makedirs("./uploaded_images/"+today_date+"/")
+        if os.path.exists("./images/uploaded_images/"+today_date+"/") == False:
+            os.makedirs("./images/uploaded_images/"+today_date+"/")
 
         #check removed_bg directory exists or not, if not then create.
 
-        if os.path.exists("./removed_bg/"+today_date+"/") == False:
-            os.makedirs("./removed_bg/"+today_date+"/")
+        if os.path.exists("./images/removed_bg/"+today_date+"/") == False:
+            os.makedirs("./images/removed_bg/"+today_date+"/")
 
         #save uploaded file into the directory
         with open(file_save_path, "wb") as f:
@@ -42,7 +42,7 @@ async def upload_image(img_file:UploadFile =File(...)):
             result=with_rembg.remove_background(file_save_path,file_output_path)
             
             if result['status'] == "success":
-                return {"image_path":file_save_path,"message": f"Image saved at {result['file_out_path']} successfully"}
+                return {"uploaded_image_path":file_save_path,"message": f"Image saved at {result['file_out_path']} successfully"}
             else:
                 return {"error":result['error']}
         else:
