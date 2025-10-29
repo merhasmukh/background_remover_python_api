@@ -71,7 +71,7 @@ PyWavelets==1.4.1
 pyzmq==25.1.1
 referencing==0.30.2
 rembg==2.0.50
-requests==2.31.0
+requests==2.32.4
 rich==13.6.0
 rpds-py==0.10.3
 scikit-image==0.21.0
